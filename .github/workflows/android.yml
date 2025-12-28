@@ -21,7 +21,7 @@ jobs:
       run: dotnet workload install maui
 
     - name: Build APK
-      run: dotnet publish -f net8.0-android -c Release -p:AndroidPackageFormat=apk -o build_output
+      run: dotnet publish -f net8.0-android -c Release -p:AndroidPackageFormat=apk -p:CheckEolWorkloads=false -o build_output
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
